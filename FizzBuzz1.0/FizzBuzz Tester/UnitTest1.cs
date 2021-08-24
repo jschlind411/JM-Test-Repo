@@ -13,6 +13,9 @@ namespace FizzBuzz_Tester
 
             Assert.NotNull(fizzBuzzer);
             Assert.Equal(0, fizzBuzzer.FizzCount);
+            Assert.Equal(0, fizzBuzzer.BuzzCount);
+            Assert.Equal(0, fizzBuzzer.FizzBuzzCount);
+            Assert.Equal(0, fizzBuzzer.TotalCount);
         }
     }
 }
