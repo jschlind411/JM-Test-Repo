@@ -26,7 +26,7 @@ namespace FizzBuzz_Tester
         }
 
         [Fact]
-        public void FizzBuzzer_CanRecieveResponseFrom_ValueToCheck()
+        public void FizzBuzzer_ReturnsValueFrom_Check()
         {
             string response = _fizzBuzzer.Check(1);
 
@@ -34,11 +34,23 @@ namespace FizzBuzz_Tester
         }
 
         [Fact]
-        public void FizzBuzzer_Iterates_Count()
+        public void FizzBuzzer_IteratesTotalCount_WhenCheckingValues()
         {
             _fizzBuzzer.Check(1);
 
             Assert.Equal(1, _fizzBuzzer.TotalCount);
+
+            _fizzBuzzer.Check(1);
+
+            Assert.Equal(2, _fizzBuzzer.TotalCount);
+        }
+
+        [Fact]
+        public void FizzBuzzer_ReturnsFizz_GivenAFizzValue()
+        {
+            var response = _fizzBuzzer.Check(3);
+
+            Assert.Equal("Fizz", response);
         }
     }
 }

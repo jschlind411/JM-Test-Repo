@@ -15,6 +15,7 @@ namespace FizzBuzz
 
         public string Check(int value)
         {
+            TotalCount++;
             return "";
         }
     }
