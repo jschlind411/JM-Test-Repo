@@ -6,9 +6,10 @@ namespace FizzBuzz_Tester
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void CanCreateFizzBuzzer()
         {
-            //initial commit. Hello \o/
+            var fizzBuzzer = new FizzBuzzer();
+           
         }
     }
 }
