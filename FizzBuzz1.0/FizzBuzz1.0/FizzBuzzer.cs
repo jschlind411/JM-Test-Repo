@@ -12,5 +12,10 @@ namespace FizzBuzz
         public int BuzzCount { get; set; }
         public int FizzBuzzCount { get; set; }
         public int TotalCount { get; set; }
+
+        public string Check(int value)
+        {
+            return "";
+        }
     }
 }

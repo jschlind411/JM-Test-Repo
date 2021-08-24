@@ -26,9 +26,19 @@ namespace FizzBuzz_Tester
         }
 
         [Fact]
-        public void FizzBuzzer_CanRecieve_ValueToCheck()
+        public void FizzBuzzer_CanRecieveResponseFrom_ValueToCheck()
+        {
+            string response = _fizzBuzzer.Check(1);
+
+            Assert.NotNull(response);
+        }
+
+        [Fact]
+        public void FizzBuzzer_Iterates_Count()
         {
             _fizzBuzzer.Check(1);
+
+            Assert.Equal(1, _fizzBuzzer.TotalCount);
         }
     }
 }
