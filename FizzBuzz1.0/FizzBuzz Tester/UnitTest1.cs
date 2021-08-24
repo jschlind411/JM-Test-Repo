@@ -8,7 +8,7 @@ namespace FizzBuzz_Tester
         [Fact]
         public void Test1()
         {
-
+            //initial commit. Hello \o/
         }
     }
 }
