@@ -16,6 +16,12 @@ namespace FizzBuzz
         public string Check(int value)
         {
             TotalCount++;
+
+            if(value % 3 == 0)
+            {
+                return "Fizz";
+            }
+
             return "";
         }
     }

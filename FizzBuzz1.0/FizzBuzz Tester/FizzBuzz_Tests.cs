@@ -45,12 +45,23 @@ namespace FizzBuzz_Tester
             Assert.Equal(2, _fizzBuzzer.TotalCount);
         }
 
-        [Fact]
-        public void FizzBuzzer_ReturnsFizz_GivenAFizzValue()
+        [Theory]
+        [InlineData(3)]
+        [InlineData(9)]
+        [InlineData(36)]
+        public void FizzBuzzer_ReturnsFizz_GivenAFizzValue(int valueToCheck)
         {
-            var response = _fizzBuzzer.Check(3);
+            var response = _fizzBuzzer.Check(valueToCheck);
 
             Assert.Equal("Fizz", response);
+        }
+
+        [Fact]
+        public void FizzBuzzer_ReturnsBuzz_GivenABuzzValue()
+        {
+            var response = _fizzBuzzer.Check(5);
+
+            Assert.Equal("Buzz", response); 
         }
     }
 }
