@@ -19,6 +19,7 @@ namespace FizzBuzz
 
             if(value % 15 == 0)
             {
+                FizzBuzzCount++;
                 return "FizzBuzz";
             }
             if(value % 3 == 0)
@@ -28,7 +29,8 @@ namespace FizzBuzz
                 return "Fizz";
             }
             if (value % 5 == 0)
-            { 
+            {
+                BuzzCount++;
                 return "Buzz";
             }
 
