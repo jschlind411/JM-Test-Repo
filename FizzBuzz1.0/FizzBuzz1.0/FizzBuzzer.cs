@@ -8,6 +8,10 @@ namespace FizzBuzz
 {
     public class FizzBuzzer
     {
+        public FizzBuzzer()
+        {
+        }
+
         public int FizzCount { get; set; }
         public int BuzzCount { get; set; }
         public int FizzBuzzCount { get; set; }
@@ -25,7 +29,6 @@ namespace FizzBuzz
             if(value % 3 == 0)
             {
                 FizzCount++;
-
                 return "Fizz";
             }
             if (value % 5 == 0)
@@ -35,6 +38,14 @@ namespace FizzBuzz
             }
 
             return value.ToString();
+        }
+
+        public void CheckList(List<int> values)
+        {
+            foreach (int value in values)
+            {
+                Check(value);
+            }
         }
     }
 }

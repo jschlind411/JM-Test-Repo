@@ -33,19 +33,18 @@ namespace FizzBuzz_Tester
         [Fact(DisplayName = "Can take list of ints and set correct counts")]
         public void NewFizzBuzzer_CanTakeListOfNumbersWhenCreated_AndReturnCorrectCounts()
         {
-            var ListOfNumbers = new List<int>() { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 };
+            var ListOfNumbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
 
-            _fizzBuzzer = new FizzBuzzer(ListOfNumbers);
+            _fizzBuzzer.CheckList(ListOfNumbers);
 
             Assert.NotNull(_fizzBuzzer);
 
-            Assert.Equal(5, _fizzBuzzer.FizzCount);
-            Assert.Equal(3, _fizzBuzzer.BuzzCount);
+            Assert.Equal(4, _fizzBuzzer.FizzCount);
+            Assert.Equal(2, _fizzBuzzer.BuzzCount);
             Assert.Equal(1, _fizzBuzzer.FizzBuzzCount);
 
             Assert.Equal(15, _fizzBuzzer.TotalCount);
         }
-
     }
 
     [Trait("FizzBuzzer Logic", "Ordinary Numbers")]
