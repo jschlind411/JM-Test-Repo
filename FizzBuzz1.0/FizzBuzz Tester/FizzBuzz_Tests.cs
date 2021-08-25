@@ -53,15 +53,17 @@ namespace FizzBuzz_Tester
             Assert.Equal(2, _fizzBuzzer.TotalCount);
         }
 
-        //TODO: This Unit Test is for you Mike :D
-        [Fact(DisplayName = "Checked Number should be returned if not a fizz/buzz/fizzbuzz Value")]
-        public void FizzBuzzer_ReturnsNumber_IfNot_Fizz_Buzz_FizzBuzz()
+        [Theory(DisplayName = "Checked Number should be returned if not a fizz/buzz/fizzbuzz Value")]
+        [InlineData(4)]
+        [InlineData(17)]
+        [InlineData(53)]
+        public void FizzBuzzer_ReturnsNumber_IfNot_Fizz_Buzz_FizzBuzz(int valueToCheck)
         {
-            var response = _fizzBuzzer.Check(1);
+            var response = _fizzBuzzer.Check(valueToCheck);
 
             int.TryParse(response, out var numberToCheck);
 
-            Assert.Equal(1, numberToCheck);
+            Assert.Equal(valueToCheck, numberToCheck);
         }
     }
 
@@ -118,6 +120,31 @@ namespace FizzBuzz_Tester
 
             Assert.Equal("Buzz", response);
         }
+
+        [Fact(DisplayName = "Correctly Iterates Counts with Buzz Values")]
+        public void FizzBuzzer_CorrectlyIteratesCounts_WhenCheckingBuzzValues()
+        {
+            _fizzBuzzer.Check(5);
+
+            Assert.Equal(1, _fizzBuzzer.BuzzCount);
+            Assert.Equal(1, _fizzBuzzer.TotalCount);
+            Assert.Equal(0, _fizzBuzzer.FizzCount);
+            Assert.Equal(0, _fizzBuzzer.FizzBuzzCount);
+
+            _fizzBuzzer.Check(5);
+
+            Assert.Equal(2, _fizzBuzzer.BuzzCount);
+            Assert.Equal(2, _fizzBuzzer.TotalCount);
+            Assert.Equal(0, _fizzBuzzer.FizzCount);
+            Assert.Equal(0, _fizzBuzzer.FizzBuzzCount);
+
+            _fizzBuzzer.Check(1);
+
+            Assert.Equal(2, _fizzBuzzer.BuzzCount);
+            Assert.Equal(3, _fizzBuzzer.TotalCount);
+            Assert.Equal(0, _fizzBuzzer.FizzCount);
+            Assert.Equal(0, _fizzBuzzer.FizzBuzzCount);
+        }
     }
 
     [Trait("FizzBuzzer Logic", "FizzBuzz Numbers")]
@@ -132,6 +159,31 @@ namespace FizzBuzz_Tester
             var response = _fizzBuzzer.Check(valueToCheck);
 
             Assert.Equal("FizzBuzz", response);
+        }
+
+        [Fact(DisplayName = "Correctly Iterates Counts with FizzBuzz Values")]
+        public void FizzBuzzer_CorrectlyIteratesCounts_WhenCheckingFizzBuzzValues()
+        {
+            _fizzBuzzer.Check(15);
+
+            Assert.Equal(1, _fizzBuzzer.FizzBuzzCount);
+            Assert.Equal(1, _fizzBuzzer.TotalCount);
+            Assert.Equal(0, _fizzBuzzer.FizzCount);
+            Assert.Equal(0, _fizzBuzzer.BuzzCount);
+
+            _fizzBuzzer.Check(15);
+
+            Assert.Equal(2, _fizzBuzzer.FizzBuzzCount);
+            Assert.Equal(2, _fizzBuzzer.TotalCount);
+            Assert.Equal(0, _fizzBuzzer.FizzCount);
+            Assert.Equal(0, _fizzBuzzer.BuzzCount);
+
+            _fizzBuzzer.Check(1);
+
+            Assert.Equal(2, _fizzBuzzer.FizzBuzzCount);
+            Assert.Equal(3, _fizzBuzzer.TotalCount);
+            Assert.Equal(0, _fizzBuzzer.FizzCount);
+            Assert.Equal(0, _fizzBuzzer.BuzzCount);
         }
     }
 }

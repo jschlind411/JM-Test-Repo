@@ -28,11 +28,11 @@ namespace FizzBuzz
                 return "Fizz";
             }
             if (value % 5 == 0)
-            {
+            { 
                 return "Buzz";
             }
 
-            return "";
+            return value.ToString();
         }
     }
 }
