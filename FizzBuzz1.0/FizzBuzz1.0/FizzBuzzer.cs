@@ -17,8 +17,14 @@ namespace FizzBuzz
         {
             TotalCount++;
 
+            if(value % 15 == 0)
+            {
+                return "FizzBuzz";
+            }
             if(value % 3 == 0)
             {
+                FizzCount++;
+
                 return "Fizz";
             }
             if (value % 5 == 0)
