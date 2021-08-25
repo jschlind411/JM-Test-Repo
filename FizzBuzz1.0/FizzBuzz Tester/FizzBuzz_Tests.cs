@@ -18,7 +18,7 @@ namespace FizzBuzz_Tester
     public class ObjectCreationAndDefaults : FizzBuzz_Tests
     {
         [Fact(DisplayName = "Object Created with Correct Defaults")]
-        public void NewFizzBuzzer_IsCreateed_WithCorrectDefaults()
+        public void NewFizzBuzzer_IsCreated_WithCorrectDefaults()
         {
             Assert.NotNull(_fizzBuzzer);
 
@@ -54,7 +54,7 @@ namespace FizzBuzz_Tester
         }
 
         //TODO: This Unit Test is for you Mike :D
-        [Fact(DisplayName = "Checked Number should be returned if not a fizz/buzz/fizzbuzz value")]
+        [Fact(DisplayName = "Checked Number should be returned if not a fizz/buzz/fizzbuzz Value")]
         public void FizzBuzzer_ReturnsNumber_IfNot_Fizz_Buzz_FizzBuzz()
         {
             var response = _fizzBuzzer.Check(1);
@@ -68,7 +68,7 @@ namespace FizzBuzz_Tester
     [Trait("FizzBuzzer Logic", "Fizz Numbers")]
     public class FizzLogic : FizzBuzz_Tests
     {
-        [Theory(DisplayName = "Check Returns Fizz given a Fizz value")]
+        [Theory(DisplayName = "Check Returns Fizz given a Fizz Value")]
         [InlineData(3)]
         [InlineData(9)]
         [InlineData(36)]
@@ -79,7 +79,7 @@ namespace FizzBuzz_Tester
             Assert.Equal("Fizz", response);
         }
 
-        [Fact(DisplayName = "Correctly Iterates Counts with Fizz values")]
+        [Fact(DisplayName = "Correctly Iterates Counts with Fizz Values")]
         public void FizzBuzzer_CorrectlyIteratesCounts_WhenCheckingFizzValues()
         {
             _fizzBuzzer.Check(3);
@@ -108,7 +108,7 @@ namespace FizzBuzz_Tester
     [Trait("FizzBuzzer Logic", "Buzz Numbers")]
     public class BuzzLogic : FizzBuzz_Tests
     {
-        [Theory(DisplayName = "Check Returns Buzz given a Buzz value")]
+        [Theory(DisplayName = "Check Returns Buzz given a Buzz Value")]
         [InlineData(5)]
         [InlineData(35)]
         [InlineData(95)]
@@ -123,7 +123,7 @@ namespace FizzBuzz_Tester
     [Trait("FizzBuzzer Logic", "FizzBuzz Numbers")]
     public class FizzBuzzLogic : FizzBuzz_Tests
     {
-        [Theory(DisplayName = "Check Returns FizzBuzz given a FizzBuzz value")]
+        [Theory(DisplayName = "Check Returns FizzBuzz given a FizzBuzz Value")]
         [InlineData(15)]
         [InlineData(45)]
         [InlineData(60)]
