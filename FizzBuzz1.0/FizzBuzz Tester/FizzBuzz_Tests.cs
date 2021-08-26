@@ -1,5 +1,6 @@
 using System;
 using Xunit;
+using Xunit.Abstractions;
 using FizzBuzz;
 using System.Collections.Generic;
 
@@ -12,6 +13,14 @@ namespace FizzBuzz_Tester
         public FizzBuzz_Tests()
         {
             _fizzBuzzer = new FizzBuzzer();
+        }
+        
+        public ITestOutputHelper output;
+
+        public FizzBuzz_Tests(ITestOutputHelper output)
+        {
+            _fizzBuzzer = new FizzBuzzer();
+            this.output = output;
         }
     }
 
@@ -36,7 +45,7 @@ namespace FizzBuzz_Tester
             var ListOfNumbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
 
             _fizzBuzzer = new FizzBuzzer(ListOfNumbers);
-            
+
             Assert.NotNull(_fizzBuzzer);
 
             Assert.Equal(4, _fizzBuzzer.FizzCount);
@@ -217,7 +226,7 @@ namespace FizzBuzz_Tester
 
         [Theory(DisplayName = "Can take a list of ints and set correct counts")]
         [MemberData(nameof(TestListItemsData))]
-        public void FizzBuzzer_CanTakeListOfNumbers_AndReturnCorrectCounts(List<int> listOfNumbers, int fizzCount, 
+        public void FizzBuzzer_CanTakeListOfNumbers_AndReturnCorrectCounts(List<int> listOfNumbers, int fizzCount,
             int buzzCount, int fizzBuzzCount, int totalCount)
         {
             _fizzBuzzer.Check(listOfNumbers);
@@ -227,6 +236,15 @@ namespace FizzBuzz_Tester
             Assert.Equal(fizzBuzzCount, _fizzBuzzer.FizzBuzzCount);
 
             Assert.Equal(totalCount, _fizzBuzzer.TotalCount);
+        }
+
+        [Trait("FizzBuzzer Logic", "Output Logic")]
+        [Fact(DisplayName = "Can display correct FizzBuzz output in console")]
+        public void FizzBuzzer_CorrectlyDisplays_FizzOutput_InConsole()
+        {
+            _fizzBuzzer.Check(3);
+
+            output.WriteLine("Fizz");
         }
     }
 }
