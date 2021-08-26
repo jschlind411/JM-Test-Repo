@@ -6,26 +6,19 @@ using System.Collections.Generic;
 
 namespace FizzBuzz_Tester
 {
-    public class FizzBuzz_Tests
+    public class FizzBuzzer_Tests
     {
         public FizzBuzzer _fizzBuzzer { get; set; }
 
-        public FizzBuzz_Tests()
-        {
-            _fizzBuzzer = new FizzBuzzer();
-        }
-        
-        public ITestOutputHelper output;
 
-        public FizzBuzz_Tests(ITestOutputHelper output)
+        public FizzBuzzer_Tests()
         {
             _fizzBuzzer = new FizzBuzzer();
-            this.output = output;
         }
     }
 
     [Trait("FizzBuzzer Constructor", "Object Creation")]
-    public class ObjectCreationAndDefaults : FizzBuzz_Tests
+    public class ObjectCreationAndDefaults : FizzBuzzer_Tests
     {
         [Fact(DisplayName = "Object Created with Correct Defaults")]
         public void NewFizzBuzzer_IsCreated_WithCorrectDefaults()
@@ -57,7 +50,7 @@ namespace FizzBuzz_Tester
     }
 
     [Trait("FizzBuzzer Logic", "Ordinary Numbers")]
-    public class OrdinaryNumbers : FizzBuzz_Tests
+    public class OrdinaryNumbers : FizzBuzzer_Tests
     {
         [Fact(DisplayName = "A NonNull value should always be returned")]
         public void FizzBuzzer_ReturnsValueFrom_Check()
@@ -94,7 +87,7 @@ namespace FizzBuzz_Tester
     }
 
     [Trait("FizzBuzzer Logic", "Fizz Numbers")]
-    public class FizzLogic : FizzBuzz_Tests
+    public class FizzLogic : FizzBuzzer_Tests
     {
         [Theory(DisplayName = "Check Returns Fizz given a Fizz Value")]
         [InlineData(3)]
@@ -134,7 +127,7 @@ namespace FizzBuzz_Tester
     }
 
     [Trait("FizzBuzzer Logic", "Buzz Numbers")]
-    public class BuzzLogic : FizzBuzz_Tests
+    public class BuzzLogic : FizzBuzzer_Tests
     {
         [Theory(DisplayName = "Check Returns Buzz given a Buzz Value")]
         [InlineData(5)]
@@ -174,7 +167,7 @@ namespace FizzBuzz_Tester
     }
 
     [Trait("FizzBuzzer Logic", "FizzBuzz Numbers")]
-    public class FizzBuzzLogic : FizzBuzz_Tests
+    public class FizzBuzzLogic : FizzBuzzer_Tests
     {
         [Theory(DisplayName = "Check Returns FizzBuzz given a FizzBuzz Value")]
         [InlineData(15)]
@@ -214,7 +207,7 @@ namespace FizzBuzz_Tester
     }
 
     [Trait("FizzBuzzer Logic", "List Logic")]
-    public class ListLogic : FizzBuzz_Tests
+    public class ListLogic : FizzBuzzer_Tests
     {
         public static IEnumerable<object[]> TestListItemsData =>
             new List<object[]>
@@ -237,14 +230,6 @@ namespace FizzBuzz_Tester
 
             Assert.Equal(totalCount, _fizzBuzzer.TotalCount);
         }
-
-        [Trait("FizzBuzzer Logic", "Output Logic")]
-        [Fact(DisplayName = "Can display correct FizzBuzz output in console")]
-        public void FizzBuzzer_CorrectlyDisplays_FizzOutput_InConsole()
-        {
-            _fizzBuzzer.Check(3);
-
-            output.WriteLine("Fizz");
-        }
     }
+
 }

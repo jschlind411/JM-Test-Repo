@@ -1,4 +1,5 @@
 ﻿using System;
+using FizzBuzz;
 
 namespace FizzBuzz1._0
 {
@@ -6,7 +7,9 @@ namespace FizzBuzz1._0
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var fizzBuzzGame = new FizzBuzzGame();
+            fizzBuzzGame.Play();
         }
     }
+
 }
