@@ -40,7 +40,7 @@ namespace FizzBuzz
             return value.ToString();
         }
 
-        public void CheckList(List<int> values)
+        public void Check(List<int> values)
         {
             foreach (int value in values)
             {
