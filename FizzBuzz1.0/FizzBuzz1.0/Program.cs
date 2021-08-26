@@ -7,8 +7,7 @@ namespace FizzBuzz1._0
     {
         static void Main(string[] args)
         {
-            var fizzBuzzGame = new FizzBuzzGame();
-            fizzBuzzGame.Play();
+            
         }
     }
 

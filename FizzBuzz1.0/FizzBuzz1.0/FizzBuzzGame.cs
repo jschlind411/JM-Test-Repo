@@ -10,7 +10,9 @@ namespace FizzBuzz
     {
         public FizzBuzzGame()
         {
-
         }
+
+        public int PlayerOneScore { get; set; }
+        public int PlayerTwoScore { get; set; }
     }
 }

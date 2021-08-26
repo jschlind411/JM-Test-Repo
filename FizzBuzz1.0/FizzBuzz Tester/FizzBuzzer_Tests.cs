@@ -10,7 +10,6 @@ namespace FizzBuzz_Tester
     {
         public FizzBuzzer _fizzBuzzer { get; set; }
 
-
         public FizzBuzzer_Tests()
         {
             _fizzBuzzer = new FizzBuzzer();
@@ -231,5 +230,4 @@ namespace FizzBuzz_Tester
             Assert.Equal(totalCount, _fizzBuzzer.TotalCount);
         }
     }
-
 }

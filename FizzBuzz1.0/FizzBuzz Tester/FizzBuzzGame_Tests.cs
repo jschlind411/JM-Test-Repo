@@ -8,7 +8,7 @@ using Xunit;
 
 namespace FizzBuzz_Tester
 {
-    class FizzBuzzGame_Tests
+    public class FizzBuzzGame_Tests
     {
         public FizzBuzzGame _fizzBuzzGame { get; set; }
 
@@ -20,10 +20,13 @@ namespace FizzBuzz_Tester
         [Trait("FizzBuzzGame Constructor", "Object Creation")]
         public class FizzBuzzGameLogic : FizzBuzzGame_Tests
         {
-            [Fact(DisplayName = "Object Can Be Created")]
-            public void NewFizzBuzzGame_CanBeCreated()
+            [Fact(DisplayName = "Object Can Be Created with Correct Defaults")]
+            public void NewFizzBuzzGame_CanBeCreated_WithCorrectDefaults()
             {
                 Assert.NotNull(_fizzBuzzGame);
+
+                Assert.Equal(0, _fizzBuzzGame.PlayerOneScore);
+                Assert.Equal(0, _fizzBuzzGame.PlayerTwoScore);
             }
         }
     }
