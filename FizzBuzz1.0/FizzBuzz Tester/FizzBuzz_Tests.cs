@@ -214,8 +214,6 @@ namespace FizzBuzz_Tester
 
             _fizzBuzzer.Check(ListOfNumbers);
 
-            Assert.NotNull(_fizzBuzzer);
-
             Assert.Equal(4, _fizzBuzzer.FizzCount);
             Assert.Equal(2, _fizzBuzzer.BuzzCount);
             Assert.Equal(1, _fizzBuzzer.FizzBuzzCount);
