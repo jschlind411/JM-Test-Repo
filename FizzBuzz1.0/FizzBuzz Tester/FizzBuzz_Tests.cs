@@ -211,7 +211,8 @@ namespace FizzBuzz_Tester
             new List<object[]>
             {
                 new object[] { new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 }, 4, 2, 1, 15 },
-                new object[] { new List<int> { 3, 6, 9, 5, 10, 20, 15, 30, 45 }, 3, 3, 3, 9 }
+                new object[] { new List<int> { 3, 6, 9, 5, 10, 20, 15, 30, 45 }, 3, 3, 3, 9 },
+                new object[] { new List<int> { 8, 3, 7, 9, 5, 37, 40, 56, 72, 44, 89, 90, 123, 176, 249, 202, 351 }, 6, 2, 1, 17 },
             };
 
         [Theory(DisplayName = "Can take a list of ints and set correct counts")]
