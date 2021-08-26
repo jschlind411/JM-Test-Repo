@@ -36,7 +36,7 @@ namespace FizzBuzz_Tester
             var ListOfNumbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
 
             _fizzBuzzer = new FizzBuzzer(ListOfNumbers);
-
+            
             Assert.NotNull(_fizzBuzzer);
 
             Assert.Equal(4, _fizzBuzzer.FizzCount);
@@ -207,18 +207,21 @@ namespace FizzBuzz_Tester
     [Trait("FizzBuzzer Logic", "List Logic")]
     public class ListLogic : FizzBuzz_Tests
     {
-        [Fact(DisplayName = "Can take list of ints and set correct counts")]
+        [Theory(DisplayName = "Can take a list of ints and set correct counts")]
+        [InlineData?()]
+        [ClassData?()]
+        {MemberData?()]
         public void FizzBuzzer_CanTakeListOfNumbers_AndReturnCorrectCounts()
         {
-            var ListOfNumbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+            var ListOfNumbers = new List<int>();
 
             _fizzBuzzer.Check(ListOfNumbers);
 
-            Assert.Equal(4, _fizzBuzzer.FizzCount);
-            Assert.Equal(2, _fizzBuzzer.BuzzCount);
-            Assert.Equal(1, _fizzBuzzer.FizzBuzzCount);
+            Assert.Equal(?, _fizzBuzzer.FizzCount);
+            Assert.Equal(?, _fizzBuzzer.BuzzCount);
+            Assert.Equal(?, _fizzBuzzer.FizzBuzzCount);
 
-            Assert.Equal(15, _fizzBuzzer.TotalCount);
+            Assert.Equal(?, _fizzBuzzer.TotalCount);
         }
     }
 }
