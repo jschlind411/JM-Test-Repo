@@ -207,21 +207,25 @@ namespace FizzBuzz_Tester
     [Trait("FizzBuzzer Logic", "List Logic")]
     public class ListLogic : FizzBuzz_Tests
     {
+        public static IEnumerable<object[]> TestListItemsData =>
+            new List<object[]>
+            {
+                new object[] { new List<int>{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}, 4, 2, 1, 15 },
+                new object[] { new List<int> { 3, 6, 9, 5, 10, 20, 15, 30, 45 }, 3, 3, 3, 9}
+            };
+
         [Theory(DisplayName = "Can take a list of ints and set correct counts")]
-        [InlineData?()]
-        [ClassData?()]
-        {MemberData?()]
-        public void FizzBuzzer_CanTakeListOfNumbers_AndReturnCorrectCounts()
+        [MemberData(nameof(TestListItemsData))]
+        public void FizzBuzzer_CanTakeListOfNumbers_AndReturnCorrectCounts(List<int> listOfNumbers, int fizzCount, 
+            int buzzCount, int fizzBuzzCount, int totalCount)
         {
-            var ListOfNumbers = new List<int>();
+            _fizzBuzzer.Check(listOfNumbers);
 
-            _fizzBuzzer.Check(ListOfNumbers);
+            Assert.Equal(fizzCount, _fizzBuzzer.FizzCount);
+            Assert.Equal(buzzCount, _fizzBuzzer.BuzzCount);
+            Assert.Equal(fizzBuzzCount, _fizzBuzzer.FizzBuzzCount);
 
-            Assert.Equal(?, _fizzBuzzer.FizzCount);
-            Assert.Equal(?, _fizzBuzzer.BuzzCount);
-            Assert.Equal(?, _fizzBuzzer.FizzBuzzCount);
-
-            Assert.Equal(?, _fizzBuzzer.TotalCount);
+            Assert.Equal(totalCount, _fizzBuzzer.TotalCount);
         }
     }
 }
