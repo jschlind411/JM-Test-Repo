@@ -208,7 +208,7 @@ namespace FizzBuzz_Tester
     public class ListLogic : FizzBuzz_Tests
     {
         [Fact(DisplayName = "Can take list of ints and set correct counts")]
-        public void NewFizzBuzzer_CanTakeListOfNumbersWhenCreated_AndReturnCorrectCounts()
+        public void FizzBuzzer_CanTakeListOfNumbers_AndReturnCorrectCounts()
         {
             var ListOfNumbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
 
