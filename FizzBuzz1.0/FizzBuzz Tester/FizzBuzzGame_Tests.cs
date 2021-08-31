@@ -25,9 +25,20 @@ namespace FizzBuzz_Tester
             {
                 Assert.NotNull(_fizzBuzzGame);
 
-                Assert.Equal(0, _fizzBuzzGame.PlayerOneScore);
-                Assert.Equal(0, _fizzBuzzGame.PlayerTwoScore);
+                Assert.Equal(0, _fizzBuzzGame.currentPlayer);
             }
+
+          //[Fact]
+          //public void FizzBuzzGame_CorrectlyIteratesTurns()
+          //  {
+          //      _fizzBuzzGame.Play();
+
+          //      Assert.Equal(1, _fizzBuzzGame.turn);
+
+          //      _fizzBuzzGame.Play();
+
+          //      Assert.Equal(2, _fizzBuzzGame.turn);
+          //  }
         }
     }
 }
