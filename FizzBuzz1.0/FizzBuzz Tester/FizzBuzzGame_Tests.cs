@@ -27,18 +27,6 @@ namespace FizzBuzz_Tester
              
                 Assert.Equal(0, _fizzBuzzGame.round);
             }
-
-            [Fact]
-            public void FizzBuzzGame_CorrectlyIteratesRounds()
-            {
-                _fizzBuzzGame.Play();
-
-                Assert.Equal(0, _fizzBuzzGame.round);
-
-                _fizzBuzzGame.Play();
-
-                Assert.Equal(1, _fizzBuzzGame.round);
-            }
         }
     }
 }

@@ -12,8 +12,7 @@ namespace FizzBuzz
         {
         }
 
-        public string Name { get; set; } = "";
+        public string Name { get; set; }
         public int Score { get; set; }
-
     }
 }

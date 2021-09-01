@@ -23,7 +23,7 @@ namespace FizzBuzz
             playerOne.Name = "One";
             playerTwo.Name = "Two";
             
-            Console.WriteLine("How many rounds would you like to play?");
+            Console.WriteLine("Welcome to the FizzBuzz game!\nHow many rounds would you like to play?");
             round = Convert.ToInt32(Console.ReadLine());
 
             for (int count = 1; count < round; count++)
@@ -31,6 +31,8 @@ namespace FizzBuzz
                 TakeATurn(playerOne);
                 TakeATurn(playerTwo);
             }
+
+            Console.WriteLine("Player One scored " + playerOne.Score + " points.\nPlayer Two scored " + playerTwo.Score + " points.");
 
             if(playerOne.Score > playerTwo.Score)
             {
@@ -45,7 +47,7 @@ namespace FizzBuzz
                 Console.WriteLine("It's a tie!");
             }
 
-            Console.WriteLine("Thank you for playing!");
+            Console.WriteLine("Thank you for playing FizzBuzz!");
             Console.ReadLine();
         }
 
