@@ -12,29 +12,61 @@ namespace FizzBuzz
         {
         }
 
-        public int currentPlayer { get; set; } = 1;
+        public int round { get; set; }
 
-        public int turn { get; set; }
+        FizzBuzzer fizzBuzzer = new();
+        FizzBuzzPlayer playerOne = new();
+        FizzBuzzPlayer playerTwo = new();
 
         public void Play()
         {
-            var _fizzBuzzer = new FizzBuzzer();
+            playerOne.Name = "One";
+            playerTwo.Name = "Two";
+            
+            Console.WriteLine("How many rounds would you like to play?");
+            round = Convert.ToInt32(Console.ReadLine());
 
-            turn++;
-            if(turn % 2 != 0)
+            for (int count = 1; count < round; count++)
             {
-                Console.WriteLine("Player One, pick a number");
-                var input = Convert.ToInt32(Console.ReadLine());
+                TakeATurn(playerOne);
+                TakeATurn(playerTwo);
+            }
 
-                var answer = _fizzBuzzer.Check(input);
+            if(playerOne.Score > playerTwo.Score)
+            {
+                Console.WriteLine("Congratulations, Player One. You're the Winner!");
+            }
+            else if(playerTwo.Score > playerOne.Score)
+            {
+                Console.WriteLine("Congratulations, Player Two. You're the Winner!");
             }
             else
             {
-                Console.WriteLine("Player Two, pick a number");
-                var input = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("It's a tie!");
+            }
 
-                var answer = _fizzBuzzer.Check(input);
-            }  
+            Console.WriteLine("Thank you for playing!");
+            Console.ReadLine();
+        }
+
+        public void TakeATurn(FizzBuzzPlayer player)
+        {
+            Random random = new();
+            int number = random.Next(1, 200);
+            var answer = fizzBuzzer.Check(number);
+
+            Console.WriteLine("Player " + player.Name + ", here is your number: " + number.ToString() + "\nWhat is your reply?");
+            var reply = (Console.ReadLine());
+
+            if (answer == reply)
+            {
+                player.Score++;
+                Console.WriteLine("That's right, Player " + player.Name + "!");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, that's the wrong answer.");
+            }
         }
     }
 }

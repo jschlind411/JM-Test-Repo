@@ -24,21 +24,21 @@ namespace FizzBuzz_Tester
             public void NewFizzBuzzGame_CanBeCreated_WithCorrectDefaults()
             {
                 Assert.NotNull(_fizzBuzzGame);
-
-                Assert.Equal(0, _fizzBuzzGame.currentPlayer);
+             
+                Assert.Equal(0, _fizzBuzzGame.round);
             }
 
-          //[Fact]
-          //public void FizzBuzzGame_CorrectlyIteratesTurns()
-          //  {
-          //      _fizzBuzzGame.Play();
+            [Fact]
+            public void FizzBuzzGame_CorrectlyIteratesRounds()
+            {
+                _fizzBuzzGame.Play();
 
-          //      Assert.Equal(1, _fizzBuzzGame.turn);
+                Assert.Equal(0, _fizzBuzzGame.round);
 
-          //      _fizzBuzzGame.Play();
+                _fizzBuzzGame.Play();
 
-          //      Assert.Equal(2, _fizzBuzzGame.turn);
-          //  }
+                Assert.Equal(1, _fizzBuzzGame.round);
+            }
         }
     }
 }

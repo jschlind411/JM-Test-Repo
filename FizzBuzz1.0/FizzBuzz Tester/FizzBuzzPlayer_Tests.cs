@@ -22,7 +22,7 @@ namespace FizzBuzz_Tester
         {
             Assert.NotNull(_fizzBuzzPlayer);
 
-            Assert.Equal(1, _fizzBuzzPlayer.PlayerNumber);
+            Assert.Equal("", _fizzBuzzPlayer.Name);
             Assert.Equal(0, _fizzBuzzPlayer.Score);
         }
     }
