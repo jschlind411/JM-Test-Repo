@@ -8,18 +8,30 @@ namespace FizzBuzz1._0
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the FizzBuzz game!\nWould you prefer one player or two?");
-            var choice = Console.ReadLine();
 
-            if (choice == "one")
+            bool validInput = false;
+            while(validInput == false)
             {
-                var _fizzBuzzGame = new FizzBuzzGame_OnePlayer();
-                _fizzBuzzGame.Play();
+                var choice = Console.ReadLine();
+
+                if ((choice == "1") || (choice.ToLower() == "one"))
+                {
+                    var _fizzBuzzGame = new FizzBuzzGame_OnePlayer();
+                    _fizzBuzzGame.Play();
+                    break;
+                }
+                else if ((choice == "2") || (choice.ToLower() == "two"))
+                {
+                    var _fizzBuzzGame = new FizzBuzzGame_TwoPlayer();
+                    _fizzBuzzGame.Play();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a valid answer.");
+                }
             }
-            else
-            {
-                var _fizzBuzzGame = new FizzBuzzGame_TwoPlayer();
-                _fizzBuzzGame.Play();
-            }
+            
         }
     }
 }

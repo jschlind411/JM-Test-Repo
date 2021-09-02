@@ -50,28 +50,26 @@ namespace FizzBuzz
             Console.WriteLine("Would you like to play again?");
             var reply = Console.ReadLine();
 
-            if (reply == "yes")
+            if ((reply.ToLower() == "yes") || (reply.ToLower() == "y"))
             {
                 Play();
             }
             else
             {
                 Console.WriteLine("Thank you for playing FizzBuzz!");
-                Console.ReadLine();
             }
-
         }
 
         public void TakeATurn(FizzBuzzPlayer player)
         {
             Random random = new();
-            int number = random.Next(1, 200);
+            int number = random.Next(50, 200);
             var answer = fizzBuzzer.Check(number);
 
             Console.WriteLine("Player " + player.Name + ", here is your number: " + number.ToString() + "\nWhat is your reply?");
-            var reply = (Console.ReadLine());
+            var reply = Console.ReadLine();
 
-            if (answer == reply)
+            if (answer.ToLower() == reply.ToLower())
             {
                 player.Score++;
                 Console.WriteLine("That's right, Player " + player.Name + "!");
