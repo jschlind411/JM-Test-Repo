@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace FizzBuzz
 {
-    public class FizzBuzzGame
+    public class FizzBuzzGame_TwoPlayer
     {
-        public FizzBuzzGame()
+        public FizzBuzzGame_TwoPlayer()
         {
         }
 
@@ -23,10 +23,10 @@ namespace FizzBuzz
             playerOne.Name = "One";
             playerTwo.Name = "Two";
             
-            Console.WriteLine("Welcome to the FizzBuzz game!\nHow many rounds would you like to play?");
+            Console.WriteLine("Great!\nHow many rounds would you like to play?");
             round = Convert.ToInt32(Console.ReadLine());
 
-            for (int count = 1; count < round; count++)
+            for (int count = 0; count < round; count++)
             {
                 TakeATurn(playerOne);
                 TakeATurn(playerTwo);
@@ -47,8 +47,19 @@ namespace FizzBuzz
                 Console.WriteLine("It's a tie!");
             }
 
-            Console.WriteLine("Thank you for playing FizzBuzz!");
-            Console.ReadLine();
+            Console.WriteLine("Would you like to play again?");
+            var reply = Console.ReadLine();
+
+            if (reply == "yes")
+            {
+                Play();
+            }
+            else
+            {
+                Console.WriteLine("Thank you for playing FizzBuzz!");
+                Console.ReadLine();
+            }
+
         }
 
         public void TakeATurn(FizzBuzzPlayer player)

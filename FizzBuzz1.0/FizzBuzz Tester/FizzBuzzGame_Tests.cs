@@ -10,11 +10,11 @@ namespace FizzBuzz_Tester
 {
     public class FizzBuzzGame_Tests
     {
-        public FizzBuzzGame _fizzBuzzGame { get; set; }
+        public FizzBuzzGame_TwoPlayer _fizzBuzzGame { get; set; }
 
         public FizzBuzzGame_Tests()
         {
-            _fizzBuzzGame = new FizzBuzzGame();
+            _fizzBuzzGame = new FizzBuzzGame_TwoPlayer();
         }
 
         [Trait("FizzBuzzGame Constructor", "Object Creation")]
