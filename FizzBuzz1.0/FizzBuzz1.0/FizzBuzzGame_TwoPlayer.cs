@@ -23,8 +23,18 @@ namespace FizzBuzz
             playerOne.Name = "One";
             playerTwo.Name = "Two";
             
-            Console.WriteLine("Great!\nHow many rounds would you like to play?");
-            round = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("How many rounds would you like to play?");
+            try
+            {
+                round = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a valid number.");
+                Play();
+            }
+
+            Console.WriteLine("Great! Let's begin.");
 
             for (int count = 0; count < round; count++)
             {

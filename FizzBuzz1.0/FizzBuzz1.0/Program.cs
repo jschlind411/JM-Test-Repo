@@ -30,8 +30,7 @@ namespace FizzBuzz1._0
                 {
                     Console.WriteLine("Please enter a valid answer.");
                 }
-            }
-            
+            } 
         }
     }
 }

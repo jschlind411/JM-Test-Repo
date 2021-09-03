@@ -21,13 +21,23 @@ namespace FizzBuzz
         {
             if(player.Name == "")
             {
-                Console.WriteLine("Great!\nPlease enter your name.");
+                Console.WriteLine("Please enter your name.");
                 player.Name = Console.ReadLine();
             }
             
             Console.WriteLine("How many rounds would you like to play, " + player.Name + "?");
-            round = Convert.ToInt32(Console.ReadLine());
-            
+            try
+            {
+                round = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a valid number.");
+                Play();
+            }
+
+            Console.WriteLine("Great! Let's begin.");
+
             for (int count = 0; count < round; count++)
             {
                 TakeATurn(player);
